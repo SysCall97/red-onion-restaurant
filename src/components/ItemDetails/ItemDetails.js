@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { breakfastItems, lunchItems, dinnerItems } from '../../foodInfo';
+import { foods } from '../../foodInfo';
 import { Button } from '@material-ui/core';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
@@ -11,10 +11,8 @@ const ItemDetails = () => {
     const { id } = useParams();
     const [total, setTotal] = useContext(notificationContext);
     const [quantity, setQuantity] = useState(0);
-    let foodItem = null;
-    if (id[0] === 'b') foodItem = breakfastItems.find(breakfast => breakfast.id === id);
-    else if (id[0] === 'l') foodItem = lunchItems.find(lunch => lunch.id === id);
-    else if (id[0] === 'd') foodItem = dinnerItems.find(dinner => dinner.id === id);
+    const foodItem = foods.find(food => food.id === id);
+
     const { img, details, name, price } = foodItem;
 
     const handleAdd = () => {

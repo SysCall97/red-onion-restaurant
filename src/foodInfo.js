@@ -19,9 +19,11 @@ import dinner4 from "./images/Dinner/dinner4.png";
 import dinner5 from "./images/Dinner/dinner5.png";
 import dinner6 from "./images/Dinner/dinner6.png";
 
-export const breakfastItems = [
+
+export const foods = [
     {
         id: "b-1",
+        category: "breakfast",
         name: "Breakfast Item-1",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
@@ -30,6 +32,7 @@ export const breakfastItems = [
     },
     {
         id: "b-2",
+        category: "breakfast",
         name: "Breakfast Item-2",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
@@ -38,6 +41,7 @@ export const breakfastItems = [
     },
     {
         id: "b-3",
+        category: "breakfast",
         name: "Breakfast Item-3",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
@@ -46,6 +50,7 @@ export const breakfastItems = [
     },
     {
         id: "b-4",
+        category: "breakfast",
         name: "Breakfast Item-4",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
@@ -54,6 +59,7 @@ export const breakfastItems = [
     },
     {
         id: "b-5",
+        category: "breakfast",
         name: "Breakfast Item-5",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
@@ -62,18 +68,16 @@ export const breakfastItems = [
     },
     {
         id: "b-6",
+        category: "breakfast",
         name: "Breakfast Item-6",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
         price: 10,
         img: brk6
-    }
-    
-];
-
-export const lunchItems = [
+    },
     {
         id: "l-1",
+        category: "lunch",
         name: "Lunch Item-1",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
@@ -82,6 +86,7 @@ export const lunchItems = [
     },
     {
         id: "l-2",
+        category: "lunch",
         name: "Lunch Item-2",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
@@ -90,6 +95,7 @@ export const lunchItems = [
     },
     {
         id: "l-3",
+        category: "lunch",
         name: "Lunch Item-3",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
@@ -98,6 +104,7 @@ export const lunchItems = [
     },
     {
         id: "l-4",
+        category: "lunch",
         name: "Lunch Item-4",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
@@ -106,6 +113,7 @@ export const lunchItems = [
     },
     {
         id: "l-5",
+        category: "lunch",
         name: "Lunch Item-5",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
@@ -114,17 +122,16 @@ export const lunchItems = [
     },
     {
         id: "l-6",
+        category: "lunch",
         name: "Lunch Item-6",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
         price: 10,
         img: lunch6
-    }
-]
-
-export const dinnerItems = [
+    },
     {
         id: "d-1",
+        category: "dinner",
         name: "Dinner Item-1",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
@@ -133,6 +140,7 @@ export const dinnerItems = [
     },
     {
         id: "d-2",
+        category: "dinner",
         name: "Dinner Item-2",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
@@ -141,6 +149,7 @@ export const dinnerItems = [
     },
     {
         id: "d-3",
+        category: "dinner",
         name: "Dinner Item-3",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
@@ -149,6 +158,7 @@ export const dinnerItems = [
     },
     {
         id: "d-4",
+        category: "dinner",
         name: "Dinner Item-4",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
@@ -157,6 +167,7 @@ export const dinnerItems = [
     },
     {
         id: "d-5",
+        category: "dinner",
         name: "Dinner Item-5",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
@@ -165,10 +176,11 @@ export const dinnerItems = [
     },
     {
         id: "d-6",
+        category: "dinner",
         name: "Dinner Item-6",
         description: "Something delicious",
         details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam recusandae laboriosam sed ad, maxime quod autem architecto unde dolorem reiciendis voluptates asperiores. Libero facere ex iste consectetur excepturi, perspiciatis recusandae!",
         price: 10,
         img: dinner6
-    },
-]
+    }
+];

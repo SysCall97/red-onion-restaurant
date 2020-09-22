@@ -1,7 +1,7 @@
 import { Button } from '@material-ui/core';
 import React, { useContext, useState } from 'react';
 import { notificationContext } from '../../App';
-import { breakfastItems, dinnerItems, lunchItems } from '../../foodInfo';
+import { foods } from '../../foodInfo';
 import Card from '../Card/Card';
 
 
@@ -21,10 +21,12 @@ const FoodSection = () => {
         cursor: "pointer",
         margin: "15px 20px"
     }
+    const [total, setTotal] = useContext(notificationContext);
     const [breakfast, setBreakfast] = useState(false);
     const [lunch, setLunch] = useState(true);
     const [dinner, setDinner] = useState(false);
-    const [foodItems, setFoodItems] = useState(lunchItems);
+    const [foodItems2, setFoodItems2] = useState(foods.filter(food => food.category === 'lunch'));
+
 
 
     const handleClick = (val) => {
@@ -32,20 +34,19 @@ const FoodSection = () => {
             setBreakfast(true);
             setLunch(false);
             setDinner(false);
-            setFoodItems(breakfastItems)
+            setFoodItems2(foods.filter(food => food.category === 'breakfast'));
         } else if (val === 2) {
             setBreakfast(false);
             setLunch(true);
             setDinner(false);
-            setFoodItems(lunchItems);
+            setFoodItems2(foods.filter(food => food.category === 'lunch'));
         } else {
             setBreakfast(false);
             setLunch(false);
             setDinner(true);
-            setFoodItems(dinnerItems);
+            setFoodItems2(foods.filter(food => food.category === 'dinner'));
         }
     }
-    const [total, setTotal] = useContext(notificationContext);
     return (
         <div>
             {
@@ -73,9 +74,16 @@ const FoodSection = () => {
                 </div>
             }
             <div className="container">
-                <div className="card-deck">
+
+                {/* <div className="card-deck">
                     {
                         foodItems.map(item => <Card item={item} key={item.id} />)
+                    }
+                </div> */}
+
+                <div className="card-deck">
+                    {
+                        foodItems2.map(item => <Card item={item} key={item.id} />)
                     }
                 </div>
             </div>
