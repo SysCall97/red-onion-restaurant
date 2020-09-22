@@ -30,7 +30,7 @@ const FeatureCard = (props) => {
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                        <img src={icon} alt="" style={{width:"10%", color: "red"}}/> {name}
+                        <img src={icon} alt="" style={{width:"10%"}}/> {name}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                         {description}

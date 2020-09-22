@@ -23,48 +23,32 @@ const ItemDetails = () => {
     }
 
     return (
-        <div style={{ display: "flex", justifyContent: "center", marginTop: "5%" }}>
-            <div style={{ marginRight: "10%", width: "35%" }}>
-                <h1 style={{ fontWeight: "600" }}>{name}</h1>
-                <p style={{ color: "gray" }}>{details}</p>
-                <div style={{ display: "flex", alignItems: "center" }}>
-                    <div><h2 style={{ fontSize: "30px", fontWeight: "400" }}>${price}</h2></div>
-                    <div style={{
-                        fontSize: "30px",
-                        fontWeight: "400",
-                        borderRadius: "20px",
-                        border: "1px solid black",
-                        width: "8vw",
-                        marginLeft: "5%",
-                        height: "6vh",
-                        display: "flex",
-                        justifyContent: "space-around",
-                        alignItems: "center"
-                    }}>
-                        <div style={{ color: "gray", cursor: "pointer" }} onClick={() => {
+        <div className="ItemDetailsContainer">
+            <div className="ItemDetailsLeft">
+                <h1 className="ItemDetailsName">{name}</h1>
+                <p className="ItemDetailsDetails">{details}</p>
+                <div className="ItemDetailsPriceQuantity">
+                    <div><h2 className="ItemDetailsPrice">${price}</h2></div>
+                    <div className="ItemDetailsQuantity">
+                        <div className="ItemDetailsDecrease" onClick={() => {
                             if(quantity > 0) setQuantity(quantity-1);
                         }}>- </div>
                         <div> {quantity} </div>
-                         <div style={{ color: "red", cursor: "pointer" }} onClick={() => setQuantity(quantity+1)}> +</div>
+                         <div className="ItemDetailsIncrease" onClick={() => setQuantity(quantity+1)}> +</div>
                     </div>
                 </div>
                 <Button 
                     onClick={handleAdd}
                     variant="contained" 
                     color="secondary" 
-                    style={{
-                        borderRadius:"20px", 
-                        display:"flex", 
-                        alignItems:"center"
-                }}>
+                    className="ItemDetailsButton"
+                    >
                         <ShoppingCartOutlinedIcon /> 
                         <div>Add</div>
                 </Button>
             </div>
             <div>
-                <img src={img} alt="" style={{
-                    width: "40vw"
-                }} />
+                <img src={img} alt="" style={{ width: "40vw" }} />
             </div>
         </div>
     );

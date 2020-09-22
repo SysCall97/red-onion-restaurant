@@ -6,35 +6,117 @@
   text-align: center;
 }
 
+
+
+.card-deck {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: .5rem;
+  margin-left: 5%;
+}
+
+.form{
+  display: "flex";
+  flex-direction:"column";
+  justify-content: "center";
+  align-items: "center";
+  width: "50%";
+}
+
+/* advertising section */
+.advertisingSection{
+  margin-left: 5%;
+}
+
+.container{
+  position: relative;
+  top: 10px;
+}
+
+/* card style */
+.Link{
+  text-decoration: none;
+  color: none;
+}
+
+.cardStyle{
+  box-shadow: 5px 5px 10px gray;
+  width: 70%;
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.cardTitle{
+  color: #133247;
+}
+
+.cardText{
+  color: #000;
+}
+
+/* Food section */
+.foodSectionButton{
+  display: flex; 
+  justify-content: center;
+  margin: 5%;
+}
+
+.divStyle{
+  width: 1fr;
+  display: flex;
+  justify-content: center;
+}
+
+.active{
+  color: red;
+  cursor: pointer;
+  border-bottom: 5px solid red;
+  margin: 15px 20px;
+}
+
+.FoodSectionText{
+  cursor: pointer;
+  margin: 15px 20px;
+}
+
+/* Footer */
+.footerContainer{
+  background-color: black;
+  height: 1fr;
+}
+
+.footerUpper{
+  display: flex;
+  margin-top: 5%;
+}
+
+.footerLogo{
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
+.contact{
+  color: white; 
+  padding: 10vh 5vw 0 0;
+  width: 40%; 
+  margin-left: 10%;
+}
+
+.copyright{
+  color: white;
+  padding: 5%;
+  margin-bottom: 0;
+}
+
+/* header */
 .header{
   height: 60px;
   max-width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-.Button{
-  max-height: 80px;
-  background-color: #f50057;
-  border: none;
-  border-radius: 5px;
-  width: 90px;
-  height: 5vh;
-  cursor: pointer;
-}
-
-.headerContainer {
-  width: 90%;
-  height: 50%;
-  /* padding: 1vh; */
-  display: flex;
-  
-  justify-content: space-between;
-}
-
-.headerContainer img{
-  height: 100%;
 }
 
 .left{
@@ -53,6 +135,44 @@
   margin-left: 5%;
 }
 
+.Button{
+  max-height: 80px;
+  background-color: #f50057;
+  border: none;
+  border-radius: 5px;
+  width: 90px;
+  height: 5vh;
+  cursor: pointer;
+}
+
+.headerContainer {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  
+  justify-content: space-between;
+}
+
+.headerContainer img{
+  height: 100%;
+}
+
+.headerTotal{
+  color: #f50057; 
+  font-weight: 500;
+}
+
+.headerLogin{
+  color: black;
+  text-decoration: none;
+}
+
+.headerSignin{
+  color: white;
+  text-decoration: none;
+}
+
+/* Home */
 .banner{
   /* background-color: yellow; */
   width: 1fr;
@@ -66,22 +186,123 @@
   align-items: center;
 }
 
-.container{
-  position: relative;
-  top: 10px;
+.bannerContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.card-deck {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-gap: .5rem;
+.bannerText{
+  font-family: Andale Mono, monospace;
+  font-size: 30px;
+}
+
+/* ItemDetails */
+.ItemDetailsContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.ItemDetailsLeft{
+  margin-right: 10%;
+  width: 35%;
+}
+
+.ItemDetailsName{
+  font-weight: 600;
+}
+
+.ItemDetailsDetails{
+  color: gray;
+}
+
+.ItemDetailsPriceQuantity{
+  display: flex;
+  align-items: center;
+}
+
+.ItemDetailsPrice{
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.ItemDetailsQuantity{
+  font-size: 30px;
+  font-weight: 400;
+  border-radius: 20px;
+  border: 1px solid black;
+  width: 90px;
   margin-left: 5%;
+  height: 35px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.form{
-  display: "flex";
-  flex-direction:"column";
-  justify-content: "center";
-  align-items: "center";
-  width: "50%";
+.ItemDetailsDecrease{
+  color: gray;
+  cursor: pointer;
+}
+
+.ItemDetailsIncrease{
+  color: red;
+  cursor: pointer;
+}
+
+.ItemDetailsButton{
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* login */
+.loginDivStyle{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginFormStyle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+}
+
+.loginInput{
+  height: 30px;
+  width: 50vw;
+  margin: 10px;
+  border-radius: 20px;
+  padding-left: 10px;
+  border: 1px solid black;
+  outline: none;
+}
+
+.loginSubmit{
+  background-color: #e51a4b;
+  height: 30px;
+  width: 50vw;
+  margin: 10px;
+  border-radius: 20px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+}
+
+.loginLink{
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.error{
+  color: red;
 }

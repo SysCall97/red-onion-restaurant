@@ -6,26 +6,11 @@ import Card from '../Card/Card';
 
 
 const FoodSection = () => {
-    const divStyle = {
-        width: "1fr",
-        display: "flex",
-        justifyContent: "center"
-    }
-    const active = {
-        color: "red",
-        cursor: "pointer",
-        borderBottom: "5px solid red",
-        margin: "15px 20px"
-    }
-    const text = {
-        cursor: "pointer",
-        margin: "15px 20px"
-    }
     const [total, setTotal] = useContext(notificationContext);
     const [breakfast, setBreakfast] = useState(false);
     const [lunch, setLunch] = useState(true);
     const [dinner, setDinner] = useState(false);
-    const [foodItems2, setFoodItems2] = useState(foods.filter(food => food.category === 'lunch'));
+    const [foodItems, setFoodItems] = useState(foods.filter(food => food.category === 'lunch'));
 
 
 
@@ -34,60 +19,55 @@ const FoodSection = () => {
             setBreakfast(true);
             setLunch(false);
             setDinner(false);
-            setFoodItems2(foods.filter(food => food.category === 'breakfast'));
+            setFoodItems(foods.filter(food => food.category === 'breakfast'));
         } else if (val === 2) {
             setBreakfast(false);
             setLunch(true);
             setDinner(false);
-            setFoodItems2(foods.filter(food => food.category === 'lunch'));
+            setFoodItems(foods.filter(food => food.category === 'lunch'));
         } else {
             setBreakfast(false);
             setLunch(false);
             setDinner(true);
-            setFoodItems2(foods.filter(food => food.category === 'dinner'));
+            setFoodItems(foods.filter(food => food.category === 'dinner'));
         }
     }
     return (
         <div>
             {
                 breakfast &&
-                <div style={divStyle}>
-                    <h4 onClick={() => handleClick(1)} style={active}>Breakfast</h4>
-                    <h4 onClick={() => handleClick(2)} style={text}>Lunch</h4>
-                    <h4 onClick={() => handleClick(3)} style={text}>Dinner</h4>
+                <div className="divStyle">
+                    <h4 onClick={() => handleClick(1)} className="active">Breakfast</h4>
+                    <h4 onClick={() => handleClick(2)} className="FoodSectionText">Lunch</h4>
+                    <h4 onClick={() => handleClick(3)} className="FoodSectionText">Dinner</h4>
                 </div>
             }
             {
                 lunch &&
-                <div style={divStyle}>
-                    <h4 onClick={() => handleClick(1)} style={text}>Breakfast</h4>
-                    <h4 onClick={() => handleClick(2)} style={active}>Lunch</h4>
-                    <h4 onClick={() => handleClick(3)} style={text}>Dinner</h4>
+                <div className="divStyle">
+                    <h4 onClick={() => handleClick(1)} className="FoodSectionText">Breakfast</h4>
+                    <h4 onClick={() => handleClick(2)} className="active">Lunch</h4>
+                    <h4 onClick={() => handleClick(3)} className="FoodSectionText">Dinner</h4>
                 </div>
             }
             {
                 dinner &&
-                <div style={divStyle}>
-                    <h4 onClick={() => handleClick(1)} style={text}>Breakfast</h4>
-                    <h4 onClick={() => handleClick(2)} style={text}>Lunch</h4>
-                    <h4 onClick={() => handleClick(3)} style={active}>Dinner</h4>
+                <div className="divStyle">
+                    <h4 onClick={() => handleClick(1)} className="FoodSectionText">Breakfast</h4>
+                    <h4 onClick={() => handleClick(2)} className="FoodSectionText">Lunch</h4>
+                    <h4 onClick={() => handleClick(3)} className="active">Dinner</h4>
                 </div>
             }
             <div className="container">
 
-                {/* <div className="card-deck">
+                <div className="card-deck">
                     {
                         foodItems.map(item => <Card item={item} key={item.id} />)
                     }
-                </div> */}
-
-                <div className="card-deck">
-                    {
-                        foodItems2.map(item => <Card item={item} key={item.id} />)
-                    }
                 </div>
+
             </div>
-            <div style={{display:"flex", justifyContent:"center", margin:"5%"}}>
+            <div className="foodSectionButton">
                 {
                     total > 0 ?
                     <Button variant="contained" color="secondary">Checkout Your Food</Button>

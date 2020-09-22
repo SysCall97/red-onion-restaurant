@@ -32,7 +32,7 @@ const AdvertiseSection = () => {
     ];
     let key=0;
     return (
-        <div style={{marginLeft: "5%"}}>
+        <div className="advertisingSection">
             <h1>Why you choose us</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio harum facere expedita.</p>
             

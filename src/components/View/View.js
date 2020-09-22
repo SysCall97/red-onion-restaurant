@@ -10,7 +10,7 @@ import NoMatch from '../NoMatch/NoMatch';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
 import Signin from '../Signin/Signin';
-import Navbar from '../Navbar/Navbar';
+import ItemDetails from '../ItemDetails/ItemDetails';
 
 export const userContext = React.createContext();
 
@@ -19,7 +19,6 @@ const View = () => {
     return (
         <Router>
             <Header />
-            {/* <Navbar /> */}
             <userContext.Provider value={[loggedinUser, setLoggedinUser]}>
             <Switch>
 
@@ -29,6 +28,10 @@ const View = () => {
 
                 <Route path="/home">
                     <Home />
+                </Route>
+
+                <Route path="/item/:id">
+                    <ItemDetails />
                 </Route>
 
                 <Route path="/login">

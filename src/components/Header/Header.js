@@ -22,12 +22,12 @@ const Header = () => {
 
             <div className="right">
                 <div>
-                    <div style={{color: "#f50057", fontWeight:"500"}}> {total} </div>
+                    <div className="headerTotal"> {total} </div>
                     <ShoppingCartOutlinedIcon />
                 </div>
-                <Link style={{color: "black", textDecoration: "none"}} to="/home/login">Login</Link>
+                <Link className="headerLogin" to="/login">Login</Link>
                 <button className="Button">
-                    <Link style={{color: "white", textDecoration: "none"}} to="/home/signup">Sign up</Link>
+                    <Link className="headerSignin" to="/signup">Sign up</Link>
                 </button>
             </div>
         </div>
