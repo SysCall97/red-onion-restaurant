@@ -19,23 +19,20 @@ export const initializeLoginFramework = () => {
 export const signIn = (name, email, password) => {
   return app.auth().createUserWithEmailAndPassword(email, password)
     .then(response => {
-      const user = {
+      updateUser(name, email);
+      return {
         name: name,
         email: email,
         loggedIn: true,
         error: ""
       }
-      updateUser(name, email)
-      return user;
     })
     .catch(error => {
-      const user = {
-        name: undefined,
-        email: undefined,
+      alert(error.message);
+      return {
         loggedIn: false,
         error: error.message
       }
-      return user;
     });
 }
 
@@ -47,25 +44,25 @@ const updateUser = (name) => {
 
 export const loginUser = (email, password) => {
   return app.auth().signInWithEmailAndPassword(email, password)
-  .then(res => {
-    const user = {
-      name: res.user.displayName,
-      email: res.user.email,
-      loggedIn: true,
-      error: ""
-    }
-    console.log(res);
-    return user;
-  })
-  .catch(error => {
-    const user = {
-      name: undefined,
-      email: undefined,
-      loggedIn: false,
-      error: error.message
-    }
-    return user;
-  });
+    .then(res => {
+      return {
+        name: res.user.displayName,
+        email: res.user.email,
+        loggedIn: true,
+        error: ""
+      }
+    })
+    .catch(error => {
+      alert(error.message);
+      return {
+        loggedIn: false,
+        error: error.message
+      }
+    });
+}
+
+export const signOut = () => {
+  app.auth().signOut();
 }
 
 export const getUserNameAndEmail = () => {

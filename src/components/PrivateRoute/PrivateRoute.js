@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { userContext } from '../View/View';
 
-const PrivateRouter = ({ children, ...rest }) => {
+const PrivateRoute = ({ children, ...rest }) => {
     const [loggedinUser] = useContext(userContext);
     return (
         <Route
@@ -23,4 +23,4 @@ const PrivateRouter = ({ children, ...rest }) => {
     );
 };
 
-export default PrivateRouter;
+export default PrivateRoute;

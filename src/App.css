@@ -1,12 +1,10 @@
 .app{
   max-width: 1fr;
-  /* background-color: whitesmoke; */
 }
+
 .NoMatch{
   text-align: center;
 }
-
-
 
 .card-deck {
   display: grid;
@@ -140,7 +138,8 @@
   background-color: #f50057;
   border: none;
   border-radius: 5px;
-  width: 90px;
+  width: 205px;
+  height: 32px;
   height: 5vh;
   cursor: pointer;
 }
@@ -275,26 +274,26 @@
 }
 
 .loginInput{
-  height: 30px;
-  width: 50vw;
+  height: 40px;
+  width: 35vw;
   margin: 10px;
-  border-radius: 20px;
   padding-left: 10px;
-  border: 1px solid black;
+  border: 0;
+  background-color: #eee;
   outline: none;
+  font-size: medium;
 }
 
 .loginSubmit{
   background-color: #e51a4b;
-  height: 30px;
-  width: 50vw;
+  height: 40px;
+  width: 36vw;
   margin: 10px;
-  border-radius: 20px;
   border: 0;
   outline: none;
   cursor: pointer;
   color: white;
-  font-weight: 500;
+  font-size: large;
 }
 
 .loginLink{
@@ -305,4 +304,37 @@
 
 .error{
   color: red;
+}
+
+/* checkout food */
+.checkoutContainer {
+  /* background-color: yellow; */
+  max-width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.checkoutLeft{
+  /* background-color: darkgreen; */
+  width: 650px;
+  padding: 2%;
+}
+
+.checkoutRight{
+  width: 400px;
+  padding: 2%;
+  margin-right: 5%;
+  /* background-color: red; */
+}
+
+.checkoutTitle{
+  width: max-content;
+  border: 2px solid darkgray;
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
+  border-bottom-style: groove;
+  font-size: large;
 }

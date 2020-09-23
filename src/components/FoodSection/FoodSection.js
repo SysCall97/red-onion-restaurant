@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { notificationContext } from '../../App';
 import { foods } from '../../foodInfo';
 import Card from '../Card/Card';
+import { Link } from 'react-router-dom';
 
 
 const FoodSection = () => {
@@ -15,23 +16,15 @@ const FoodSection = () => {
 
 
     const handleClick = (val) => {
-        if (val === 1) {
-            setBreakfast(true);
-            setLunch(false);
-            setDinner(false);
-            setFoodItems(foods.filter(food => food.category === 'breakfast'));
-        } else if (val === 2) {
-            setBreakfast(false);
-            setLunch(true);
-            setDinner(false);
-            setFoodItems(foods.filter(food => food.category === 'lunch'));
-        } else {
-            setBreakfast(false);
-            setLunch(false);
-            setDinner(true);
-            setFoodItems(foods.filter(food => food.category === 'dinner'));
-        }
+        setBreakfast(val === 1);
+        setLunch(val === 2);
+        setDinner(val === 3);
+
+        if (val === 1) setFoodItems(foods.filter(food => food.category === 'breakfast'));
+        else if (val === 2) setFoodItems(foods.filter(food => food.category === 'lunch'));
+        else setFoodItems(foods.filter(food => food.category === 'dinner'));
     }
+
     return (
         <div>
             {
@@ -70,7 +63,9 @@ const FoodSection = () => {
             <div className="foodSectionButton">
                 {
                     total > 0 ?
-                    <Button variant="contained" color="secondary">Checkout Your Food</Button>
+                        <Link to="/checkout" className="headerSignin">
+                            <Button variant="contained" color="secondary">Checkout Your Food</Button>
+                        </Link>
                     : <Button variant="contained" disabled>Checkout Your Food</Button>
                 }
             </div>

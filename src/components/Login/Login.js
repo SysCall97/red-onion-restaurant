@@ -6,7 +6,7 @@ import { userContext } from '../View/View';
 import logo from "../../images/logo2.png";
 
 const Login = () => {
-    initializeLoginFramework()
+    initializeLoginFramework();
     const { register, errors, handleSubmit } = useForm();
     const [loggedinUser, setLoggedinUser] = useContext(userContext);
     const history = useHistory();
@@ -18,9 +18,11 @@ const Login = () => {
     const onSubmit = ({ email, password }) => {
         loginUser(email, password)
             .then(user => {
-                console.log(user);
+                if (user.loggedIn) {
+                    setLoggedinUser(user);
+                    history.replace(from);
+                }
             })
-            .catch(error => console.log(error));
     }
 
     return (

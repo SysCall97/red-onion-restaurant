@@ -12,7 +12,6 @@ const Home = () => {
                     <TextField
                         id="outlined-uncontrolled"
                         label="Search"
-                        defaultValue="Food name"
                         variant="outlined"
                         style={{width: "90%"}}
                     />

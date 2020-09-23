@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom';
 import { notificationContext } from '../../App';
 import logo from "../../images/logo2.png";
 import { getDatabaseCart } from '../../utilities/databaseManager';
+import { signOut } from '../../firebase';
+import { userContext } from '../View/View';
 
 
 const Header = () => {
     const [total, setTotal] = useContext(notificationContext);
+    const [loggedinUser, setLoggedinUser] = useContext(userContext);
     const cart = getDatabaseCart();
     const newTotal = Object.entries(cart).reduce((total, item) => total+item[1], 0);
     setTotal(newTotal);
@@ -25,10 +28,26 @@ const Header = () => {
                     <div className="headerTotal"> {total} </div>
                     <ShoppingCartOutlinedIcon />
                 </div>
-                <Link className="headerLogin" to="/login">Login</Link>
-                <button className="Button">
-                    <Link className="headerSignin" to="/signup">Sign up</Link>
-                </button>
+                {
+                    !loggedinUser.loggedIn && 
+                    <>
+                        <Link className="headerLogin" to="/login">Login</Link>
+
+                        <Link to="/signup">
+                            <button className="Button headerSignin">Sign up</button>
+                        </Link>
+                    </>
+                }
+                {
+                    loggedinUser.loggedIn && 
+                    <button className="Button headerSignin" onClick = {() => {
+                        signOut();
+                        setLoggedinUser({});
+                    }}>
+                        Sign out({loggedinUser.name})
+                    </button>
+                }
+                
             </div>
         </div>
     );

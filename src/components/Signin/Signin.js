@@ -23,11 +23,11 @@ const Signin = () => {
         if (password === passwordConfirmed) {
             signIn(name, email, password)
                 .then(user => {
-                    console.log(user);
-                    setLoggedinUser(user);
-                    if (user.loggedIn) history.replace(from);
+                    if (user.loggedIn) {
+                        setLoggedinUser(user);
+                        history.replace(from);
+                    }
                 })
-                .catch(error => console.log(error));
         } else {
             alert("Passwod must be matched with confirmend password")
         }

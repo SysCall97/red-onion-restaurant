@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { 
+import {
     BrowserRouter as Router,
-    Route, 
-    Switch 
+    Route,
+    Switch
 } from 'react-router-dom';
 import Home from '../Home/Home';
 import Footer from '../Footer/Footer';
@@ -11,6 +11,8 @@ import Header from '../Header/Header';
 import Login from '../Login/Login';
 import Signin from '../Signin/Signin';
 import ItemDetails from '../ItemDetails/ItemDetails';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import CheckOutFoods from '../CheckOutFoods/CheckOutFoods';
 
 export const userContext = React.createContext();
 
@@ -18,35 +20,43 @@ const View = () => {
     const [loggedinUser, setLoggedinUser] = useState({});
     return (
         <Router>
-            <Header />
             <userContext.Provider value={[loggedinUser, setLoggedinUser]}>
-            <Switch>
+                <Header />
+                <Switch>
 
-                <Route exact path="/">
-                    <Home />
-                </Route>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
 
-                <Route path="/home">
-                    <Home />
-                </Route>
+                    <Route path="/home">
+                        <Home />
+                    </Route>
 
-                <Route path="/item/:id">
-                    <ItemDetails />
-                </Route>
+                    <Route path="/item/:id">
+                        <ItemDetails />
+                    </Route>
 
-                <Route path="/login">
-                    <Login />
-                </Route>
+                    {/* <PrivateRoute path="/checkout">
+                        <CheckOutFoods />
+                    </PrivateRoute> */}
 
-                <Route path="/signup">
-                    <Signin />
-                </Route>
+                    <Route path="/checkout">
+                        <CheckOutFoods />
+                    </Route>
 
-                <Route path="*">
-                    <NoMatch />
-                </Route>
+                    <Route path="/login">
+                        <Login />
+                    </Route>
 
-            </Switch>
+                    <Route path="/signup">
+                        <Signin />
+                    </Route>
+
+                    <Route path="*">
+                        <NoMatch />
+                    </Route>
+
+                </Switch>
             </userContext.Provider>
             <Footer />
         </Router>
