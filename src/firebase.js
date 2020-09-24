@@ -19,7 +19,7 @@ export const initializeLoginFramework = () => {
 export const signIn = (name, email, password) => {
   return app.auth().createUserWithEmailAndPassword(email, password)
     .then(response => {
-      updateUser(name, email);
+      updateUser(name);
       return {
         name: name,
         email: email,
@@ -36,7 +36,7 @@ export const signIn = (name, email, password) => {
     });
 }
 
-const updateUser = (name) => {
+const updateUser = name => {
   app.auth().currentUser.updateProfile({
     displayName: name
   });

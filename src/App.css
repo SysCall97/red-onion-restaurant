@@ -338,3 +338,31 @@
   border-bottom-style: groove;
   font-size: large;
 }
+
+.orderedFoodCard{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgb(245, 245, 245);
+  margin: 2%;
+  border-radius: 10px;
+}
+
+table{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+td{
+  width: 83%;
+  padding: 2%;
+}
+
+td:nth-child(1){
+  font-weight: 600;
+}
+
+.addressField{
+  height: 100px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}

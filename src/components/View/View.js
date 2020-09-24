@@ -36,13 +36,13 @@ const View = () => {
                         <ItemDetails />
                     </Route>
 
-                    {/* <PrivateRoute path="/checkout">
+                    <PrivateRoute path="/checkout">
                         <CheckOutFoods />
-                    </PrivateRoute> */}
+                    </PrivateRoute>
 
-                    <Route path="/checkout">
+                    {/* <Route path="/checkout">
                         <CheckOutFoods />
-                    </Route>
+                    </Route> */}
 
                     <Route path="/login">
                         <Login />
