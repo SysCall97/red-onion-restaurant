@@ -13,6 +13,7 @@ import Signin from '../Signin/Signin';
 import ItemDetails from '../ItemDetails/ItemDetails';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import CheckOutFoods from '../CheckOutFoods/CheckOutFoods';
+import OrderCompleted from '../OrderCompleted/OrderCompleted';
 
 export const userContext = React.createContext();
 
@@ -36,13 +37,13 @@ const View = () => {
                         <ItemDetails />
                     </Route>
 
-                    <PrivateRoute path="/checkout">
+                    <Route path="/checkout">
                         <CheckOutFoods />
-                    </PrivateRoute>
+                    </Route>
 
-                    {/* <Route path="/checkout">
-                        <CheckOutFoods />
-                    </Route> */}
+                    <Route path="/orderCompleted">
+                        <OrderCompleted />
+                    </Route>
 
                     <Route path="/login">
                         <Login />

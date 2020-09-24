@@ -1,5 +1,6 @@
 import { Button } from '@material-ui/core';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CheckoutRight = props => {
     const { orderedFoods, activatePlaceOrder } = props;
@@ -7,7 +8,7 @@ const CheckoutRight = props => {
     const itemCost = orderedFoods.reduce((total, food) => total + food.price*food.quantity, 0);
     const tax = itemCost * 0.01;
     const fee = totalItems * 0.3;
-    const total = itemCost + tax + fee
+    const total = itemCost + tax + fee;
 
     return (
         <div className="checkoutRight">
@@ -48,8 +49,16 @@ const CheckoutRight = props => {
                         </tr>
                     </tbody>
                 </table>
-                {activatePlaceOrder && <button className="loginSubmit" style={{width:"300px"}} type="submit">Place Order</button>}
-                {!activatePlaceOrder && <Button variant="contained" style={{width:"300px"}} type="submit" disabled>Place Order</Button>}
+                {
+                    activatePlaceOrder && 
+                        <Link to="/orderCompleted">
+                            <button className="loginSubmit" style={{width:"300px"}} type="submit">Place Order</button>
+                        </Link>
+                }
+                {
+                    !activatePlaceOrder && 
+                        <Button variant="contained" style={{width:"300px"}} type="submit" disabled>Place Order</Button>
+                }
             </div>
     );
 };
